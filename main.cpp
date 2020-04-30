@@ -17,13 +17,16 @@ video: Chapter 2 - Part 3
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t)
  put them here: 
  
- 
- 
- 
- 
- 
- 
- 
+  
+
+Integer / int
+Character / char 
+Boolean / bool
+Floating Point / float
+Double Floating Point / double
+Valueless or Void / void
+
+![Wide Character / wchar_t.]
  
  
  
@@ -63,12 +66,49 @@ send me a DM to check your pull request
 //2)
 void variableDeclarations()
 {
+    
     //example:
     int number = 2; //declaration of a primitive named 'number' with an initial value of '2'
-    
+
+    int beer = 4;
+    int bread = 1;
+    int meat = 3;
+
+    char ball = 1;
+    char vol = 2;
+    char wheel = 4;
+
+    bool rolling = false;
+    bool sync = true;
+    bool start = false;
+
+    float frequence = 404.457676f;
+    float resonance = 123.78987f;
+    float modulation = 89.7484f;
+
+    double chorus = 34.9484884;
+    double flanger = 89.939090;
+    double delayTime = 3.989898989;
     
     
     ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+
+    ignoreUnused(beer);
+    ignoreUnused(bread);
+    ignoreUnused(meat);
+    ignoreUnused(ball);
+    ignoreUnused(vol);
+    ignoreUnused(wheel);
+    ignoreUnused(rolling);
+    ignoreUnused(sync);
+    ignoreUnused(start);
+    ignoreUnused(frequence);
+    ignoreUnused(resonance);
+    ignoreUnused(modulation);
+    ignoreUnused(chorus);
+    ignoreUnused(flanger);
+    ignoreUnused(delayTime);
+
 }
 /*
  10 functions
@@ -81,44 +121,91 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 } 
 
 /*
- 1)
+ 1
  */
 
+bool driveBus(int gas = 0, int stop = 2)
+{
+    ignoreUnused(gas, stop);
+    if (gas < 1)
+        return false;
+    else
+        return true;
+}
 /*
  2)
  */
-
+void delay(int time = 3, int feedback = 2)
+{
+    ignoreUnused(time, feedback);
+}
 /*
  3)
  */
+bool renderAudio(double length = 0.0, int bitDepth = 32)
+{
+    ignoreUnused(length, bitDepth);
 
+    return{};
+}
 /*
  4)
  */
+int phaser(int feedback = 0, int lfoTime = 22)
+{
+    ignoreUnused(feedback, lfoTime);
 
+    return{};
+}
 /*
  5)
  */
+int eq(int wider = 12, int gain = 2)
+{
+    ignoreUnused(wider, gain);
 
+    return{};
+}
 /*
  6)
  */
-
+void compressor(int threshold, int attack)
+{
+    ignoreUnused(threshold, attack);
+}
 /*
  7)
  */
-
+int limiter(int threshold = 12, int gain = 2)
+{
+    ignoreUnused(threshold, gain);
+    return{};
+}
 /*
  8)
  */
-
+bool clipping(int distortion = 15, int gain = 76)
+{
+    ignoreUnused(distortion, gain);
+    return{};
+}
 /*
  9)
  */
-
+bool stereo(bool mono, int wide = 15)
+{
+    ignoreUnused(wide, mono);
+    return{};
+}
 /*
  10)
  */
+bool running(bool start, bool stop)
+{
+    ignoreUnused(start, stop);
+    return{};
+}
+
 
 int main()
 {
@@ -126,27 +213,39 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto busDriving = driveBus(3, 5);
+
     //2)
+    delay(4, 7);
     
     //3)
+    auto rendering = renderAudio(5.45, 16);
     
     //4)
-    
+    auto phasing = phaser(3,7);
     //5)
-    
+    auto eqing = eq(34,87);
     //6)
-    
+    compressor(2,3);
     //7)
+    auto limiting = limiter(56,32);
     
     //8)
-    
+    auto redZone = clipping(52,84);
     //9)
-    
+    auto stereoImage = stereo(false, 22);
     //10)
-    
+    auto run = running(true, false);
     
     ignoreUnused(carRented);
-    std::cout << "good to go!" << std::endl;
+    ignoreUnused(busDriving);
+    ignoreUnused(rendering);
+    ignoreUnused(phasing);
+    ignoreUnused(eqing);
+    ignoreUnused(limiting);
+    ignoreUnused(redZone);
+    ignoreUnused(stereoImage);
+    ignoreUnused(run);    
+    std::cout << "good to go! :-)" << std::endl;
     return 0;    
 }
