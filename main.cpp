@@ -91,23 +91,7 @@ void variableDeclarations()
     double delayTime = 3.989898989;
     
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
-
-    ignoreUnused(beer);
-    ignoreUnused(bread);
-    ignoreUnused(meat);
-    ignoreUnused(ball);
-    ignoreUnused(vol);
-    ignoreUnused(wheel);
-    ignoreUnused(rolling);
-    ignoreUnused(sync);
-    ignoreUnused(start);
-    ignoreUnused(frequence);
-    ignoreUnused(resonance);
-    ignoreUnused(modulation);
-    ignoreUnused(chorus);
-    ignoreUnused(flanger);
-    ignoreUnused(delayTime);
+    ignoreUnused(number, beer, bread, meat, ball, vol, wheel, rolling, sync, start, frequence, resonance, modulation, chorus, flanger, delayTime); //passing each variable declared to the ignoreUnused() function
 
 }
 /*
@@ -146,7 +130,7 @@ bool renderAudio(double length = 0.0, int bitDepth = 32)
 {
     ignoreUnused(length, bitDepth);
 
-    return{};
+    return {};
 }
 /*
  4)
@@ -155,7 +139,7 @@ int phaser(int feedback = 0, int lfoTime = 22)
 {
     ignoreUnused(feedback, lfoTime);
 
-    return{};
+    return {};
 }
 /*
  5)
@@ -164,7 +148,7 @@ int eq(int wider = 12, int gain = 2)
 {
     ignoreUnused(wider, gain);
 
-    return{};
+    return {};
 }
 /*
  6)
@@ -179,7 +163,7 @@ void compressor(int threshold, int attack)
 int limiter(int threshold = 12, int gain = 2)
 {
     ignoreUnused(threshold, gain);
-    return{};
+    return {};
 }
 /*
  8)
@@ -187,15 +171,15 @@ int limiter(int threshold = 12, int gain = 2)
 bool clipping(int distortion = 15, int gain = 76)
 {
     ignoreUnused(distortion, gain);
-    return{};
+    return {};
 }
 /*
  9)
  */
-bool stereo(bool mono, int wide = 15)
+bool stereo(bool mono, int spread = 15)
 {
-    ignoreUnused(wide, mono);
-    return{};
+    ignoreUnused(spread, mono);
+    return {};
 }
 /*
  10)
@@ -203,7 +187,7 @@ bool stereo(bool mono, int wide = 15)
 bool running(bool start, bool stop)
 {
     ignoreUnused(start, stop);
-    return{};
+    return {};
 }
 
 
@@ -222,30 +206,23 @@ int main()
     auto rendering = renderAudio(5.45, 16);
     
     //4)
-    auto phasing = phaser(3,7);
+    auto phasing = phaser(3, 7);
     //5)
-    auto eqing = eq(34,87);
+    auto eqing = eq(34, 87);
     //6)
-    compressor(2,3);
+    compressor(2, 3);
     //7)
-    auto limiting = limiter(56,32);
+    auto limiting = limiter(56, 32);
     
     //8)
-    auto redZone = clipping(52,84);
+    auto redZone = clipping(52, 84);
     //9)
     auto stereoImage = stereo(false, 22);
     //10)
     auto run = running(true, false);
     
-    ignoreUnused(carRented);
-    ignoreUnused(busDriving);
-    ignoreUnused(rendering);
-    ignoreUnused(phasing);
-    ignoreUnused(eqing);
-    ignoreUnused(limiting);
-    ignoreUnused(redZone);
-    ignoreUnused(stereoImage);
-    ignoreUnused(run);    
+    ignoreUnused(carRented, busDriving, rendering, phasing, eqing, limiting, redZone, stereoImage, run);
+
     std::cout << "good to go! :-)" << std::endl;
     return 0;    
 }
